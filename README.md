@@ -15,7 +15,7 @@ OASVD/
 ├── requirements.txt # Python dependencies
 ├── .gitignore       # Files/directories to exclude from version control
 │
-├── oasvd/           # Core library code implementing OASVD and baselines
+├── core/           # Core library code implementing OASVD and baselines
 │   ├── __init__.py
 │   ├── incremental_svd.py    # Incremental SVD updates
 │   ├── spectral_probe.py     # Residual spectral probing utilities
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-The editable install (`pip install -e .`) makes the `oasvd` package available on your `PYTHONPATH` so that the notebooks can import the core algorithms.
+The editable install (`pip install -e .`) makes the `core` package available on your `PYTHONPATH` so that the notebooks can import the core algorithms.
 
 ### Running in Google Colab
 
