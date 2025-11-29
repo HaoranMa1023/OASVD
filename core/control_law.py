@@ -146,6 +146,10 @@ class OASVD:
         # Step counter
         self.step = 0
 
+        self.err_hist: list[float] = []
+        self.rank_hist: list[int] = []
+        self.gamma_hist: list[float] = []
+
     def _need_probe(self, e_perp: float) -> bool:
         """Decide whether to trigger an extra spectral probe.
 
@@ -295,6 +299,10 @@ class OASVD:
         self.Vt = Vt_new
         self.r = r_trunc
         self.gamma = gamma
+
+        self.err_hist.append(float(self.eps_hat))
+        self.rank_hist.append(int(self.r))
+        self.gamma_hist.append(float(self.gamma))
 
         self.step += 1
 

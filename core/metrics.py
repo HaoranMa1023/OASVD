@@ -48,7 +48,7 @@ def coverage(errors: Sequence[float], threshold: float) -> float:
     cov : float
         Fraction of time steps where ``errors[t] <= threshold``.
     """
-    if not errors:
+    if errors is None or len(errors) == 0:
         return 0.0
     return sum(err <= threshold for err in errors) / len(errors)
 

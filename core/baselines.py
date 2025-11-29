@@ -74,7 +74,7 @@ def fixed_rank_isvd(A0: np.ndarray,
     # Process each update
     for u_vec, v_vec in updates:
         A_current += np.outer(u_vec, v_vec)
-        U, s, Vt = incremental_update(U, s, Vt, u_vec, v_vec)
+        U, s, Vt, _ = incremental_update(U, s, Vt, u_vec, v_vec)
         # Truncate back to rank r
         if len(s) > r:
             U = U[:, :r]
